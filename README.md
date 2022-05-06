@@ -24,11 +24,11 @@ class Program
             });
 
             app.get("/index", (req, res) => {
-                res.status(400).send("<HTML><BODY> Hello world!</BODY></HTML>");
+                res.status(200).send("<HTML><BODY> Hello world!</BODY></HTML>");
             });
 
-            app.post("/meni", (req, res) => {
-                res.status(200).send("<HTML><BODY>meniii!</BODY></HTML>");
+            app.post("/some", (req, res) => {
+                res.status(400).send("<HTML><BODY>meniii!</BODY></HTML>");
             });
 
             app.listen(8070, () =>
