@@ -1,6 +1,6 @@
 # ExpressSharp
 
-An Express.js like nuget package for building REST APIs using .NET
+An Express.js like NuGet package for building REST APIs using .NET
 
 ## Installation
 
