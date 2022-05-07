@@ -4,7 +4,7 @@ An Express.js like NuGet package for building REST APIs using .NET
 
 ## Installation
 
-You can install this package using the [nuget]("https://www.nuget.org/") package
+You can install this package using the [NuGet]("https://www.nuget.org/") package
 manager.
 
 ## How to use
