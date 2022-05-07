@@ -15,8 +15,7 @@ Using c# 9 and above, you can take advantage of top-level statements capability,
 var app = new express();
 
 
-app.use("/some", (req, res) =>
-{
+app.use("/some", (req, res) => {
     Console.WriteLine("middleware");
 });
 
@@ -29,8 +28,7 @@ app.post("/index", (req, res) => {
 });
 
 
-app.listen(8070, () =>
-{
+app.listen(8070, () => {
     Console.WriteLine("server is listing..");
 });
 
@@ -44,10 +42,9 @@ class Program
         static void Main(string[] args)
         {
             var app = new express();
+
             
-            
-            app.use("/some", (req, res) =>
-            {
+            app.use("/some", (req, res) => {
                 Console.WriteLine("middleware");
             });
 
@@ -60,8 +57,7 @@ class Program
             });
 
 
-            app.listen(8070, () =>
-            {
+            app.listen(8070, () => {
                 Console.WriteLine("server is listing..");
             });
             
