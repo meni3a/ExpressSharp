@@ -35,7 +35,7 @@ app.listen(8070, () =>
 
 ```
 
-For other version, just insert inside a function:
+For other versions, just insert inside a function:
 
 ```cs
 class Program
