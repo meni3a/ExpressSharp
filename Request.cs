@@ -11,9 +11,9 @@ namespace ExpressSharp
         public NameValueCollection query;
         public string body;
 
-        public Request(HttpListenerRequest req)
+        public Request(HttpListenerRequest httpRequest)
         {
-            request = req;
+            request = httpRequest;
             query = request.QueryString;
             using (var reader = new StreamReader(request.InputStream, request.ContentEncoding))
             {

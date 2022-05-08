@@ -11,12 +11,12 @@ namespace ExpressSharp
     public class express
     {
 
-        public string host = "localhost";
-        public string protocol = "http";
-
         HttpListener listener;
         Dictionary<Tuple<string, HttpMethod>, Action<Request, Response>> routes;
         Dictionary<string, Action<Request, Response>> middlewares;
+        public string host = "localhost";
+        public string protocol = "http";
+        
         public express()
         {
             listener = new HttpListener();
@@ -80,8 +80,8 @@ namespace ExpressSharp
                 throw new Exception("Fail to proccess request, context is null");
             }
 
-            var req = new Request(context.Request);
-            var res = new Response(context.Response);
+            var request = new Request(context.Request);
+            var response = new Response(context.Response);
             var path = context.Request.Url.AbsolutePath;
 
             var method = context.Request.HttpMethod;
@@ -90,15 +90,15 @@ namespace ExpressSharp
 
             if (middlewares.ContainsKey(path))
             {
-                middlewares[path](req, res);
+                middlewares[path](request, response);
             }
             if (routes.ContainsKey(tuple))
             {
-                routes[tuple](req, res);
+                routes[tuple](request, response);
             }
             else
             {
-                res.send($"Cannot {method} " + path);
+                response.send($"Cannot {method} " + path);
             }
 
         }

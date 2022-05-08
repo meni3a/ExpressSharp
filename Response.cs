@@ -9,19 +9,19 @@ namespace ExpressSharp
     {
         public HttpListenerResponse response;
 
-        public Response(HttpListenerResponse res)
+        public Response(HttpListenerResponse httpResponse)
         {
-            response = res;
+            response = httpResponse;
         }
-        public Response status(int number)
+        public Response status(int status)
         {
-            response.StatusCode = number;
+            response.StatusCode = status;
             return this;
         }
-        public Response send(string str)
+        public Response send(string data)
         {
 
-            string responseString = str;
+            string responseString = data;
             byte[] buffer = Encoding.UTF8.GetBytes(responseString);
 
             response.ContentLength64 = buffer.Length;
